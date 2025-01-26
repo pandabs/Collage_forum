@@ -1,0 +1,38 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}College Forum{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="text-lg font-bold">
+                <a href="/" class="hover:text-blue-300">College Forum</a>
+            </div>
+            <div class="space-x-4">
+                <a href="/" class="hover:text-blue-300">Home</a>
+                <a href="/register/" class="hover:text-blue-300">Register</a>
+                <a href="/login/" class="hover:text-blue-300">Login</a>
+                <a href="/forum/" class="hover:text-blue-300">Forum</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-6">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2025 College Forum. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-vk$%=p7nxzimlo4ccady&k$*-5(&z0jbkff+g)mvh=vt(xq#2)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['3169-103-109-177-212.ngrok-free.app ']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,3 +137,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout

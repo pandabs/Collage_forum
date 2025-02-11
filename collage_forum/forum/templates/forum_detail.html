@@ -1,0 +1,32 @@
+{% extends "base_forum.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-900 text-white flex flex-col">
+    <!-- Navbar and other content -->
+
+    <div class="flex-1 p-6 overflow-y-auto">
+        <h1 class="text-4xl font-bold text-white uppercase mb-6">{{ forum.title }}</h1>
+        <p class="text-gray-400 mb-8">Posted by {{ forum.user }} | {{ forum.created_at }}</p>
+        <p class="text-gray-300">{{ forum.description }}</p>
+
+        {% if user == forum.user %}
+        <div class="mt-6">
+            <a href="{% url 'edit_forum' forum.id %}" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded">Edit</a>
+            <a href="{% url 'delete_forum' forum.id %}" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded">Delete</a>
+        </div>
+        {% endif %}
+
+        <!-- Comments Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold text-white mb-4">Comments</h2>
+            <a href="{% url 'add_comment' forum.id %}" class="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded">Add Comment</a>
+            {% for comment in forum.comments.all %}
+            <div class="mt-4 p-4 bg-gray-800 rounded-lg">
+                <p class="text-gray-300">{{ comment.text }}</p>
+                <p class="text-gray-400 text-sm">Posted by {{ comment.user }} | {{ comment.created_at }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

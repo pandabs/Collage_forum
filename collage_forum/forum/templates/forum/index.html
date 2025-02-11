@@ -1,25 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}Home | College Forum{% endblock %}
-
 {% block content %}
-<section class="text-center">
-    <h1 class="text-4xl font-bold text-blue-600 mb-6">Welcome to the College Forum</h1>
-    <p class="text-lg text-gray-700 mb-4">Explore and discuss topics, share ideas, and grow together.</p>
+    <div class="flex flex-col items-center min-h-screen justify-center space-y-12 p-4">
+        <!-- Logo -->
+        <div class="flex items-center space-y-4 flex-col">
+            <!-- Icon (Page & Pen) -->
+            <div class="flex justify-center items-center bg-gray-800 rounded-full h-20 w-20 border border-gray-700">
+                <!-- SVG Icon: Page & Pen -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M7.586 2H14a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6.414a2 2 0 01.586-1.414l3.586-3.586A2 2 0 017.586 2zM8 3.828L5.828 6H8V3.828zM8 8H4v8a1 1 0 001 1h8a1 1 0 001-1V8H8z" />
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Central Text and Line -->
+        <div class="flex flex-col items-center space-y-2">
+            <h1 class="text-4xl font-semibold text-gray-200 text-center">College Forum</h1>
+            <p class="text-sm uppercase tracking-widest text-gray-400 text-center">where passion meets its position</p>
+            <!-- Divider Line with Logo Connection -->
+            <div class="relative w-full">
+                <div class="absolute w-[1px] bg-gray-600 h-10 top-[-50px] left-[50%] transform -translate-x-1/2"></div>
+                <div class="h-[1px] bg-gray-600 w-full"></div>
+            </div>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-xl font-semibold text-blue-600 mb-2">Create and Join Forums</h2>
-            <p class="text-gray-600">Engage in discussions by creating your own forums or joining existing ones.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-xl font-semibold text-blue-600 mb-2">Comment and Share Ideas</h2>
-            <p class="text-gray-600">Share your thoughts and opinions in active conversations.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-xl font-semibold text-blue-600 mb-2">Easy Registration</h2>
-            <p class="text-gray-600">Quickly create an account and start participating in the community.</p>
+        <!-- Navigation Links -->
+        <div class="flex flex-wrap justify-center space-x-4 space-y-4 md:space-y-0">
+            <a href="/register/" class="px-6 py-2 border border-gray-600 hover:border-gray-400 rounded text-sm uppercase text-gray-300 hover:text-white transition duration-300">
+                Register
+            </a>
+            <a href="/login/" class="px-6 py-2 border border-gray-600 hover:border-gray-400 rounded text-sm uppercase text-gray-300 hover:text-white transition duration-300">
+                Login
+            </a>
+            <a href="/forum/" class="px-6 py-2 border border-gray-600 hover:border-gray-400 rounded text-sm uppercase text-gray-300 hover:text-white transition duration-300">
+                Forum
+            </a>
+            <a href="/contactus/" class="px-6 py-2 border border-gray-600 hover:border-gray-400 rounded text-sm uppercase text-gray-300 hover:text-white transition duration-300">
+                Contact Us
+            </a>
         </div>
     </div>
-</section>
 {% endblock %}

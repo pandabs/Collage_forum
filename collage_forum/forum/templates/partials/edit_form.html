@@ -1,0 +1,5 @@
+<!-- partials/edit_form.html -->
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded">Save Changes</button>
+<button type="button" onclick="closeEditModal()" class="px-4 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded ml-2">Cancel</button>

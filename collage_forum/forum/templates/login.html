@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body class="bg-gray-900 text-gray-300 flex flex-col min-h-screen">
+    
+    <main class="flex-grow flex items-center justify-center">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-semibold text-white text-center mb-4">Login</h2>
+
+            <form method="POST" >
+                {% csrf_token %}
+                <a href="/" class="absolute top-6 right-6 text-gray-300 hover:text-white text-2xl">
+                    ✖
+                </a>
+                <div class="mb-4">
+                    <label class="block text-gray-400 text-sm mb-1">Username</label>
+                    <input type="text" name="username" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-gray-500">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-400 text-sm mb-1">Password</label>
+                    <input type="password" name="password" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-gray-500">
+                </div>
+
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded transition">
+                    Login
+                </button>
+            </form>
+
+            <p class="text-sm text-gray-400 text-center mt-4">
+                Don't have an account? <a href="/register/" class="text-blue-400 hover:underline">Register</a>
+            </p>
+        </div>
+    </main>
+
+    
+</body>
+{% endblock %}
